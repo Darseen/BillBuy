@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="navbar flex-row justify-between bg-base-100 dark:bg-neutral shadow-md border-b border-gray-300 dark:border-gray-600">
+    <div className="navbar flex-row justify-between sm:px-7 bg-base-100 dark:bg-neutral shadow-md border-b border-gray-300 dark:border-gray-600">
       <div>
         <Dropdown />
 
@@ -23,9 +23,7 @@ export default function Navbar() {
             className="lg:ml-2"
           />
 
-          <span className="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)] text-xl ml-2 font-semibold">
-            BillBuy
-          </span>
+          <span className="gradient-bg">BillBuy</span>
         </Link>
       </div>
       <div className="flex-none gap-2">
