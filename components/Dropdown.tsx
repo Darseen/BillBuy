@@ -3,7 +3,7 @@ import React from "react";
 // this is a replacement for the sidebar on mobile devices
 export default function Dropdown() {
   return (
-    <div className="dropdown dropdown-bottom shadow-md">
+    <div className="dropdown dropdown-bottom lg:hidden">
       <label tabIndex={0} className="btn btn-ghost m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"

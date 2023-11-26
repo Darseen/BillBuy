@@ -1,32 +1,36 @@
 import Image from "next/image";
 import defaultProfilePic from "@/public/images/profilePic.png";
 import logo from "@/public/images/billBuyLogo.png";
-import Dropdown from "./dropdown";
+import Dropdown from "./Dropdown";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-base-100 dark:bg-neutral shadow-md border-b border-gray-300 dark:border-gray-600">
-      <div className="flex-none lg:hidden">
+    <div className="navbar flex-row justify-between bg-base-100 dark:bg-neutral shadow-md border-b border-gray-300 dark:border-gray-600">
+      <div>
         <Dropdown />
-      </div>
 
-      <div className="flex-none">
-        <Image
-          src={logo}
-          alt="BillBuy logo"
-          quality={95}
-          width={40}
-          height={40}
-          className="ml-2"
-        />
-      </div>
+        <Link
+          href="/"
+          className="flex flex-row items-center active:scale-105 lg:hover:scale-105 transition-all"
+        >
+          <Image
+            src={logo}
+            alt="BillBuy logo"
+            quality={95}
+            width={40}
+            height={40}
+            className="lg:ml-2"
+          />
 
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl">BillBuy</a>
+          <span className="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)] text-xl ml-2 font-semibold">
+            BillBuy
+          </span>
+        </Link>
       </div>
-      <div className="flex-none">
+      <div className="flex-none gap-2">
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle mx-2">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
