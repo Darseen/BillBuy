@@ -1,6 +1,6 @@
 import { Catagories } from "@/@types/types";
 import { useActiveCatagoryContext } from "@/context/activeCatagoryContext";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 // set the active catagory in the SubNav component using react-intersection-observer

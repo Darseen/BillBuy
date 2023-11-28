@@ -4,10 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Footer from "@/components/Footer";
-import SubNav from "@/components/SubNav";
-import ActiveCatagoryContextProvider, {
-  ActiveCatagoryContext,
-} from "@/context/activeCatagoryContext";
+import ActiveCatagoryContextProvider from "@/context/activeCatagoryContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +23,6 @@ export default function RootLayout({
       <body className={`${inter.className} bg-gray-100 dark:bg-gray-800`}>
         <ActiveCatagoryContextProvider>
           <Navbar />
-          <SubNav />
           {children}
           <Footer />
           <ThemeToggle />

@@ -2,12 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-interface TimeLeft {
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
 const CountdownTimer = () => {
   const initialTargetTime = new Date();
   initialTargetTime.setHours(10, 47, 20);
@@ -18,7 +12,7 @@ const CountdownTimer = () => {
     return num < 10 ? `0${num}` : num.toString();
   };
 
-  const calculateTimeLeft = useCallback((): TimeLeft => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date();
     let difference = targetTime.getTime() - now.getTime();
 
@@ -28,7 +22,7 @@ const CountdownTimer = () => {
       difference = targetTime.getTime() - now.getTime();
     }
 
-    let timeLeft: TimeLeft = {
+    let timeLeft = {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
@@ -37,7 +31,7 @@ const CountdownTimer = () => {
     return timeLeft;
   }, [targetTime]);
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft);
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {

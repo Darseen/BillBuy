@@ -51,19 +51,21 @@ export default function getProducts(catagory: Catagories): Catagory[] | null {
     ],
     tech: [
       { name: "Laptop", image: laptop, price: 1000 },
-      { name: "Airpods", image: airpods, price: 499 },
-      { name: "Airpods", image: airpods2, price: 399 },
-      { name: "Airpods", image: airpods3, price: 299 },
       { name: "Camera", image: camera, price: 1299 },
+      { name: "Headphones", image: headphones, price: 199 },
+      { name: "Airpods", image: airpods, price: 499 },
+      { name: "Airpods", image: airpods3, price: 299 },
       { name: "Controller", image: controller, price: 249 },
+      { name: "Airpods", image: airpods2, price: 399 },
+      { name: "Headphones", image: headphones2, price: 159 },
+    ],
+    accessories: [
       { name: "Watch", image: watch, price: 549 },
       { name: "Watch", image: watch2, price: 899 },
       { name: "Watch", image: watch3, price: 639 },
       { name: "Watch", image: watch4, price: 999 },
-      { name: "Headphones", image: headphones, price: 199 },
-      { name: "Headphones", image: headphones2, price: 159 },
+      { name: "Glasses", image: glasses, price: 79 },
     ],
-    accessories: [{ name: "Glasses", image: glasses, price: 79 }],
     other: [{ name: "Vase", image: vase, price: 100 }],
   };
 

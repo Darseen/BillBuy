@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useActiveCatagoryContext } from "@/context/activeCatagoryContext";
 import { LINKS } from "@/lib/data";
 import Link from "next/link";
+import { Catagories } from "@/@types/types";
 
 export default function SubNav() {
   const { activeCatagory, setActiveCatagory } = useActiveCatagoryContext();
@@ -34,9 +35,12 @@ export default function SubNav() {
   return (
     <nav
       id="stickyNav"
-      className="flex flex-col justify-center items-center w-full h-10 shadow-md bg-gray-200 dark:bg-neutral mb-4 z-50"
+      className="flex flex-col justify-center items-center w-full h-8 sm:h-10 shadow-md bg-gray-200 dark:bg-neutral mb-4 z-50"
     >
-      <div role="tablist" className="tabs tabs-bordered flex items-center ">
+      <div
+        role="tablist"
+        className="tabs tabs-bordered tabs-sm sm:tabs-md flex items-center"
+      >
         {LINKS.map((link) => (
           <Link
             key={link.name}
