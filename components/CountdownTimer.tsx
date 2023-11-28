@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface TimeLeft {
   hours: number;
@@ -8,7 +8,7 @@ interface TimeLeft {
   seconds: number;
 }
 
-const CountdownTimer: React.FC = () => {
+const CountdownTimer = () => {
   const initialTargetTime = new Date();
   initialTargetTime.setHours(10, 47, 20);
 

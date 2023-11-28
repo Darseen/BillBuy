@@ -1,6 +1,5 @@
 import { Catagory } from "@/@types/types";
 import Image from "next/image";
-import React from "react";
 
 export default function Product({ product }: { product: Catagory }) {
   return (

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import heroImage from "@/public/images/products/tech/heroImage.jpg";
 import CountdownTimer from "./CountdownTimer";
 
@@ -24,7 +23,7 @@ export default function FeaturedProduct() {
             <span className="text-green-600 text-xl font-bold">$999</span>
           </div>
           <p className="py-6">
-            {` Save $70 on the Samsung Chromebook 4 Plus. It's a great laptop for
+            {` Save $199 on the Samsung Chromebook 4 Plus. It's a great laptop for
             students and anyone else who wants a basic laptop. It features a
             15.6-inch (1920 x 1080) display, Intel Celeron N4000 dual-core CPU,
             4GB of RAM, and 64GB of microSD-expandable storage.`}
