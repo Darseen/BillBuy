@@ -1,15 +1,12 @@
 import Image from "next/image";
 import defaultProfilePic from "@/public/images/profilePic.png";
 import logo from "@/public/images/billBuyLogo.png";
-import Dropdown from "./Dropdown";
 import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav className="navbar flex-row justify-between sm:px-7 bg-base-100 dark:bg-neutral shadow-md border-b border-gray-300 dark:border-gray-600">
       <div>
-        <Dropdown />
-
         <Link
           href="/"
           className="flex flex-row items-center active:scale-105 lg:hover:scale-105 transition-all"
