@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Product({ product }: { product: Catagory }) {
   return (
-    <div className="card sm:card-side bg-base-100 shadow-xl w-56 h-96 sm:w-auto sm:h-auto sm:max-w-sm rounded-lg hover:scale-105 transition-all duration-300 ease-in-out">
+    <div className="card h-96 w-56 rounded-lg bg-base-100 shadow-xl transition-all duration-300 ease-in-out sm:card-side hover:scale-105 sm:h-auto sm:w-auto sm:max-w-sm">
       <figure className="!rounded-b-2xl sm:!rounded-2xl">
         <Image src={product.image} alt={product.name} className="h-64 w-72" />
       </figure>

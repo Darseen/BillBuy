@@ -42,7 +42,7 @@ export const useActiveCatagoryContext = () => {
 
   if (context === null) {
     throw new Error(
-      "useActiveCatagoryContext must be used within an ActiveCatagoryContextProvider"
+      "useActiveCatagoryContext must be used within an ActiveCatagoryContextProvider",
     );
   }
 

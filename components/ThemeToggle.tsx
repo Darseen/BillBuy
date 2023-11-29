@@ -32,7 +32,7 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center fixed z-20 bottom-10 right-10 bg-transparent/10 rounded-lg p-2">
+    <div className="fixed bottom-10 right-10 z-20 flex items-center justify-center rounded-lg bg-transparent/10 p-2">
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
         <input
@@ -42,7 +42,7 @@ export default function ThemeToggle() {
         />
 
         <svg
-          className="swap-on fill-current w-7 h-7"
+          className="swap-on h-7 w-7 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -50,7 +50,7 @@ export default function ThemeToggle() {
         </svg>
 
         <svg
-          className="swap-off fill-current w-7 h-7"
+          className="swap-off h-7 w-7 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

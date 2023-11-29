@@ -42,9 +42,9 @@ const CountdownTimer = () => {
   }, [calculateTimeLeft]);
 
   return (
-    <div className="flex justify-around text-2xl sm:text-4xl font-bold rounded-lg bg-transparent/10 p-2 gradient-bg">
+    <div className="gradient-bg flex justify-around rounded-lg bg-transparent/10 p-2 text-2xl font-bold sm:text-4xl">
       <span>{`${formatNumber(timeLeft.hours)}:${formatNumber(
-        timeLeft.minutes
+        timeLeft.minutes,
       )}:${formatNumber(timeLeft.seconds)}`}</span>
     </div>
   );

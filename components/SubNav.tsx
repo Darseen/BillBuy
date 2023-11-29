@@ -35,11 +35,11 @@ export default function SubNav() {
   return (
     <nav
       id="stickyNav"
-      className="flex flex-col justify-center items-center w-full h-8 sm:h-10 shadow-md bg-gray-200 dark:bg-neutral mb-4 z-50"
+      className="z-50 mb-4 flex h-8 w-full flex-col items-center justify-center bg-gray-200 shadow-md dark:bg-neutral sm:h-10"
     >
       <div
         role="tablist"
-        className="tabs tabs-bordered tabs-sm sm:tabs-md flex items-center"
+        className="tabs tabs-bordered tabs-sm flex items-center sm:tabs-md"
       >
         {LINKS.map((link) => (
           <Link

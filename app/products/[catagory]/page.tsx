@@ -29,9 +29,9 @@ export default function page({ params: { catagory } }: PageProps) {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center mb-6">
+    <section className="mb-6 flex flex-col items-center justify-center">
       <div className="divider divider-accent">{dividerName(catagory)}</div>
-      <section className="flex items-center justify-center flex-wrap gap-4 w-full">
+      <section className="flex w-full flex-wrap items-center justify-center gap-4">
         {getProducts(catagory)?.map((product) => (
           <Product key={product.name} product={product} />
         ))}
@@ -42,9 +42,9 @@ export default function page({ params: { catagory } }: PageProps) {
 
 const Product = ({ product }: { product: Catagory }) => {
   return (
-    <div className="card card-compact bg-base-100 shadow-xl h-[30rem] sm:max-w-sm rounded-lg hover:scale-105 transition-all">
+    <div className="card card-compact h-[30rem] rounded-lg bg-base-100 shadow-xl transition-all hover:scale-105 sm:max-w-sm">
       <figure className="rounded-lg">
-        <Image src={product.image} alt={product.name} className="h-[30rem]" />
+        <Image src={product.image} alt={product.name} />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{product.name}</h2>

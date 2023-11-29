@@ -14,16 +14,16 @@ export default function Products({ catagory }: { catagory: Catagories }) {
     <section
       ref={ref}
       id={catagory}
-      className="relative flex flex-col w-full  mb-4 sm:mb-8"
+      className="relative mb-4 flex w-full  flex-col sm:mb-8"
     >
       <Link
-        href={`/${catagory}`}
-        className="flex items-center gap-2 underline text-md text-blue-500 self-end hover:scale-105"
+        href={`/products/${catagory}`}
+        className="text-md flex items-center gap-2 self-end text-blue-500 underline hover:scale-105"
       >
         View All
-        <FaArrowRightLong className="self-end mb-[2px]" />
+        <FaArrowRightLong className="mb-[2px] self-end" />
       </Link>
-      <div className="flex gap-4 p-4 overflow-x-auto w-full">
+      <div className="flex w-full gap-4 overflow-x-auto p-4">
         {getProducts(catagory)?.map((product, i) => (
           <div key={i} className="flex flex-nowrap">
             <Product product={product} />
