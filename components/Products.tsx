@@ -2,12 +2,18 @@
 
 import { Catagories } from "@/@types/types";
 import Product from "./Product";
-import getProducts from "@/lib/getProducts";
 import { useCatagoryInView } from "@/hooks/useCatagoryInView";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Product as ProductType } from "@prisma/client";
 
-export default function Products({ catagory }: { catagory: Catagories }) {
+export default function Products({
+  products,
+  catagory,
+}: {
+  products: ProductType[];
+  catagory: Catagories;
+}) {
   const { ref } = useCatagoryInView(catagory);
 
   return (
@@ -24,7 +30,7 @@ export default function Products({ catagory }: { catagory: Catagories }) {
         <FaArrowRightLong className="mb-[2px] self-end" />
       </Link>
       <div className="flex w-full gap-4 overflow-x-auto p-4">
-        {getProducts(catagory)?.map((product, i) => (
+        {products.map((product, i) => (
           <div key={i} className="flex flex-nowrap">
             <Product product={product} />
           </div>

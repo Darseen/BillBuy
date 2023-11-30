@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export type Catagories = "tech" | "clothes" | "accessories" | "other";
+export type Catagories = "Technology" | "Clothes" | "Accessories" | "Other";
 
 export type Product = {
   name: string;

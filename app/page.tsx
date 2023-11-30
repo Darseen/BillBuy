@@ -1,21 +1,28 @@
 import FeaturedProduct from "@/components/FeaturedProduct";
 import Products from "@/components/Products";
 import SubNav from "@/components/SubNav";
+import getProducts from "@/lib/getProducts";
 
-export default function Home() {
+export default async function Home() {
+  const tech = await getProducts("Technology");
+  const clothes = await getProducts("Clothes");
+  const accessories = await getProducts("Accessories");
+  const other = await getProducts("Other");
   return (
     <div>
       <SubNav />
       <main className="flex flex-col items-center justify-center p-2 sm:px-10">
         <FeaturedProduct />
         <div className="divider divider-accent">Technology</div>
-        <Products catagory="tech" />
+        {tech && <Products catagory="Technology" products={tech} />}
         <div className="divider divider-accent">Clothes</div>
-        <Products catagory="clothes" />
+        {clothes && <Products catagory="Technology" products={clothes} />}
         <div className="divider divider-accent">Accessories</div>
-        <Products catagory="accessories" />
+        {accessories && (
+          <Products catagory="Technology" products={accessories} />
+        )}
         <div className="divider divider-accent">Other</div>
-        <Products catagory="other" />
+        {other && <Products catagory="Technology" products={other} />}
       </main>
     </div>
   );

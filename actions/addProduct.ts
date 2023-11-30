@@ -22,6 +22,7 @@ export default async function addProduct(formData: FormData) {
         description,
         price,
         catagory,
+        seller: "Darseen",
       },
     });
   } catch (error) {

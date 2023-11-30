@@ -1,4 +1,4 @@
-import { Product } from "@/@types/types";
+import { Product } from "@prisma/client";
 import Image from "next/image";
 
 export default function Product({ product }: { product: Product }) {
@@ -8,6 +8,8 @@ export default function Product({ product }: { product: Product }) {
         <Image
           src={product.imageUrl}
           alt={product.name}
+          width={288}
+          height={256}
           className="h-64 w-72"
         />
       </figure>
@@ -16,7 +18,7 @@ export default function Product({ product }: { product: Product }) {
           <h2 className="card-title">{product.name}</h2>
           <div className="badge badge-accent p-3">{"$" + product.price}</div>
         </div>
-        <p>Add this product to your cart now</p>
+        <p>{product.description}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Add to Cart</button>
         </div>

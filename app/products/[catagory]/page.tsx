@@ -1,6 +1,6 @@
-import { Catagories, Product } from "@/@types/types";
-import { LINKS } from "@/lib/data";
+import { Catagories } from "@/@types/types";
 import getProducts from "@/lib/getProducts";
+import { Product } from "@prisma/client";
 import Image from "next/image";
 
 interface PageProps {
@@ -9,30 +9,14 @@ interface PageProps {
   };
 }
 
-type LinkType = (typeof LINKS)[number]["name"];
-
-export default function page({ params: { catagory } }: PageProps) {
-  const dividerName = (catagory: Catagories): LinkType | null => {
-    switch (catagory) {
-      case "tech":
-        return "Technology";
-      case "clothes":
-        return "Clothes";
-      case "accessories":
-        return "Accessories";
-      case "other":
-        return "Other";
-
-      default:
-        return null;
-    }
-  };
+export default async function page({ params: { catagory } }: PageProps) {
+  const products = await getProducts(catagory);
 
   return (
     <section className="mb-6 flex flex-col items-center justify-center">
-      <div className="divider divider-accent">{dividerName(catagory)}</div>
+      <div className="divider divider-accent">{catagory}</div>
       <section className="flex w-full flex-wrap items-center justify-center gap-4">
-        {getProducts(catagory)?.map((product) => (
+        {products?.map((product) => (
           <Product key={product.name} product={product} />
         ))}
       </section>
@@ -44,7 +28,12 @@ const Product = ({ product }: { product: Product }) => {
   return (
     <div className="card card-compact h-[30rem] rounded-lg bg-base-100 shadow-xl transition-all hover:scale-105 sm:max-w-sm">
       <figure className="rounded-lg">
-        <Image src={product.imageUrl} alt={product.name} />
+        <Image
+          src={product.imageUrl}
+          alt={product.name}
+          width={400}
+          height={500}
+        />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{product.name}</h2>
