@@ -1,11 +1,15 @@
-import { Catagory } from "@/@types/types";
+import { Product } from "@/@types/types";
 import Image from "next/image";
 
-export default function Product({ product }: { product: Catagory }) {
+export default function Product({ product }: { product: Product }) {
   return (
     <div className="card h-96 w-56 rounded-lg bg-base-100 shadow-xl transition-all duration-300 ease-in-out sm:card-side hover:scale-105 sm:h-auto sm:w-auto sm:max-w-sm">
       <figure className="!rounded-b-2xl sm:!rounded-2xl">
-        <Image src={product.image} alt={product.name} className="h-64 w-72" />
+        <Image
+          src={product.imageUrl}
+          alt={product.name}
+          className="h-64 w-72"
+        />
       </figure>
       <div className="card-body">
         <div className="flex items-center justify-between">

@@ -1,4 +1,4 @@
-import { Catagories, Catagory } from "@/@types/types";
+import { Catagories, Product } from "@/@types/types";
 import { LINKS } from "@/lib/data";
 import getProducts from "@/lib/getProducts";
 import Image from "next/image";
@@ -40,11 +40,11 @@ export default function page({ params: { catagory } }: PageProps) {
   );
 }
 
-const Product = ({ product }: { product: Catagory }) => {
+const Product = ({ product }: { product: Product }) => {
   return (
     <div className="card card-compact h-[30rem] rounded-lg bg-base-100 shadow-xl transition-all hover:scale-105 sm:max-w-sm">
       <figure className="rounded-lg">
-        <Image src={product.image} alt={product.name} />
+        <Image src={product.imageUrl} alt={product.name} />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{product.name}</h2>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import defaultProfilePic from "@/public/images/profilePic.png";
-import logo from "@/public/images/billBuyLogo.png";
+import defaultProfilePic from "@/assets/images/profilePic.png";
+import logo from "@/assets/images/billBuyLogo.png";
 import Link from "next/link";
 
 export default function Navbar() {

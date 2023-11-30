@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "@/public/images/products/tech/heroImage.jpg";
+import heroImage from "@/assets/images/products/tech/heroImage.jpg";
 import CountdownTimer from "./CountdownTimer";
 
 export default function FeaturedProduct() {
