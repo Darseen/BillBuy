@@ -16,13 +16,13 @@ export default async function Home() {
         <div className="divider divider-accent">Technology</div>
         {tech && <Products catagory="Technology" products={tech} />}
         <div className="divider divider-accent">Clothes</div>
-        {clothes && <Products catagory="Technology" products={clothes} />}
+        {clothes && <Products catagory="Clothes" products={clothes} />}
         <div className="divider divider-accent">Accessories</div>
         {accessories && (
-          <Products catagory="Technology" products={accessories} />
+          <Products catagory="Accessories" products={accessories} />
         )}
         <div className="divider divider-accent">Other</div>
-        {other && <Products catagory="Technology" products={other} />}
+        {other && <Products catagory="Other" products={other} />}
       </main>
     </div>
   );

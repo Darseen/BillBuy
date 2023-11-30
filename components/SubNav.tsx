@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useActiveCatagoryContext } from "@/context/activeCatagoryContext";
 import { LINKS } from "@/lib/data";
 import Link from "next/link";
-import { Catagories } from "@/@types/types";
 
 export default function SubNav() {
   const { activeCatagory, setActiveCatagory } = useActiveCatagoryContext();

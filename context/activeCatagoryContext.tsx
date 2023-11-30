@@ -23,7 +23,8 @@ export default function ActiveCatagoryContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [activeCatagory, setActiveCatagory] = useState<Catagories>("tech");
+  const [activeCatagory, setActiveCatagory] =
+    useState<Catagories>("Technology");
 
   return (
     <ActiveCatagoryContext.Provider
