@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "@/assets/images/products/tech/heroImage.jpg";
+import heroImage from "@/assets/images/heroImage.jpg";
 import CountdownTimer from "./CountdownTimer";
 
 export default function FeaturedProduct() {
@@ -10,6 +10,7 @@ export default function FeaturedProduct() {
           src={heroImage}
           alt="featured product"
           className="max-w-xs rounded-lg shadow-2xl sm:max-w-md"
+          priority
         />
         <div className="flex flex-col items-center justify-center sm:items-start">
           <div className="flex flex-wrap items-center justify-center sm:justify-start">
@@ -28,7 +29,7 @@ export default function FeaturedProduct() {
             15.6-inch (1920 x 1080) display, Intel Celeron N4000 dual-core CPU,
             4GB of RAM, and 64GB of microSD-expandable storage.`}
           </p>
-          <button className="btn btn-primary">See Details</button>
+          <button className="btn btn-primary">Add to Cart</button>
         </div>
       </div>
     </div>
