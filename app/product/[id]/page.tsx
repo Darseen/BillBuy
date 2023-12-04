@@ -1,3 +1,4 @@
+import AddToCartBtn from "@/components/AddToCartBtn";
 import prisma from "@/lib/db";
 import { Product } from "@prisma/client";
 import { Metadata } from "next";
@@ -65,7 +66,7 @@ export default async function page({ params: { id } }: PageProps) {
 
           <p>{product.description}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary mt-4">Add to Cart</button>
+            <AddToCartBtn productId={product.id} />
           </div>
         </div>
       </div>

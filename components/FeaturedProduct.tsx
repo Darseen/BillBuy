@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroImage from "@/assets/images/heroImage.jpg";
 import CountdownTimer from "./CountdownTimer";
+import AddToCartBtn from "./AddToCartBtn";
 
 export default function FeaturedProduct() {
   return (
@@ -29,7 +30,7 @@ export default function FeaturedProduct() {
             15.6-inch (1920 x 1080) display, Intel Celeron N4000 dual-core CPU,
             4GB of RAM, and 64GB of microSD-expandable storage.`}
           </p>
-          <button className="btn btn-primary">Add to Cart</button>
+          <AddToCartBtn productId="asd" />
         </div>
       </div>
     </div>
