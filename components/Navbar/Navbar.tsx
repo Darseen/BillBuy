@@ -4,9 +4,13 @@ import Link from "next/link";
 import searchProducts from "@/actions/searchProducts";
 import { getCart } from "@/lib/createCart";
 import CartBtn from "./CartBtn";
+import UserMenuBtn from "./UserMenuBtn";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Navbar() {
   const cart = await getCart();
+  const session = await getServerSession(authOptions);
 
   return (
     <div className="bg-base-100">
@@ -31,6 +35,7 @@ export default async function Navbar() {
             </div>
           </form>
           <CartBtn cart={cart} />
+          <UserMenuBtn session={session} />
         </div>
       </div>
     </div>

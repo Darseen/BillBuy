@@ -1,23 +1,21 @@
-"use client";
-
 import addProduct from "@/actions/addProduct";
 import AddProductBtn from "@/components/AddProductBtn";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default function page() {
+export default async function Page() {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/add-product");
+  }
   return (
     <div className="flex flex-col items-center justify-center p-2 sm:p-8">
       <h1 className="mb-3 text-lg font-bold">{`Product's Details`}</h1>
       <form
         className="flex w-full max-w-3xl flex-col items-center"
-        action={async (formData) => {
-          const { error, success } = await addProduct(formData);
-
-          if (error) {
-            alert(error);
-            return;
-          }
-          alert(success);
-        }}
+        action={addProduct}
       >
         <input
           required
