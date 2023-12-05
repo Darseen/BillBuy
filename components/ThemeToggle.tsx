@@ -28,6 +28,9 @@ export default function ThemeToggle() {
       setTheme("dark");
       document.querySelector("html")?.setAttribute("data-theme", "dark");
       document.documentElement.classList.add("dark");
+    } else {
+      document.querySelector("html")?.setAttribute("data-theme", "light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
