@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Footer from "@/components/Footer";
 import ActiveCatagoryContextProvider from "@/context/activeCatagoryContext";
+import NextAuthSessionProvider from "@/context/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${inter.className} bg-gray-100 dark:bg-gray-800`}>
-        <ActiveCatagoryContextProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <ThemeToggle />
-        </ActiveCatagoryContextProvider>
+        <NextAuthSessionProvider>
+          <ActiveCatagoryContextProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <ThemeToggle />
+          </ActiveCatagoryContextProvider>
+        </NextAuthSessionProvider>
       </body>
     </html>
   );
